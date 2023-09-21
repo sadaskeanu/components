@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { GoBell, GoDatabase } from "react-icons/go";
+import Button from "./Button";
 
 function App() {
+  const handleClick = () => {
+    console.log("Clicked!");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <Button primary rounded onClick={handleClick}>
+          Primary
+        </Button>
+      </div>
+      <div>
+        <Button secondary outline rounded>
+          <GoBell />
+          Secondary
+        </Button>
+      </div>
+      <div>
+        <Button success rounded outline>
+          Success
+        </Button>
+      </div>
+      <div>
+        <Button warning>
+          <GoDatabase />
+          Warning
+        </Button>
+      </div>
+      <div>
+        <Button danger outline>
+          Danger
+        </Button>
+      </div>
     </div>
   );
 }
